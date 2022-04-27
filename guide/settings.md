@@ -280,11 +280,11 @@ const setting: ProjectConfig = {
     cache: false,
     // 开启
     show: true,
-    // 开启快速操作
-    showQuick: true,
     // 是否可以拖拽
     canDrag: true,
-    // 是否显示刷新那妞
+    // 开启快速操作
+    showQuick: true,
+    // 是否显示刷新按钮
     showRedo: true,
     // 是否显示折叠按钮
     showFold: true,
@@ -292,13 +292,13 @@ const setting: ProjectConfig = {
 
   // 动画配置
   transitionSetting: {
-    //  是否开启切换动画
+    // 是否开启切换动画
     enable: true,
     // 动画名
     basicTransition: RouterTransitionEnum.FADE_SIDE,
     // 是否打开页面切换loading
     openPageLoading: true,
-    //是否打开页面切换顶部进度条
+    // 是否打开页面切换顶部进度条
     openNProgress: false,
   },
 
@@ -314,7 +314,7 @@ const setting: ProjectConfig = {
   useErrorHandle: false,
   // 是否开启回到顶部
   useOpenBackTop: true,
-  //  是否可以嵌入iframe页面
+  // 是否可以嵌入iframe页面
   canEmbedIFramePage: true,
   // 切换界面的时候是否删除未关闭的message及notify
   closeMessageOnSwitch: true,
@@ -335,7 +335,7 @@ const setting: ProjectConfig = {
 ```ts
 import { isDevMode } from '/@/utils/env';
 
-// 缓存默认过期时间
+// 缓存默认过期时间（秒）
 export const DEFAULT_CACHE_TIME = 60 * 60 * 24 * 7;
 
 // 开启缓存加密后，加密密钥。采用aes加密
@@ -518,6 +518,8 @@ export default {
     pageSizeOptions: ['10', '50', '80', '100'],
     //默认每页显示多少条
     defaultPageSize: 10,
+    // 默认大小
+    defaultSize: 'middle',
     // 默认排序方法
     defaultSortFn: (sortInfo: SorterResult) => {
       const { field, order } = sortInfo;
